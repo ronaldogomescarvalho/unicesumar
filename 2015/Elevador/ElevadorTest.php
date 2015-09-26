@@ -5,10 +5,6 @@ function($className){
 }
 );
 class ElevadorTest extends PHPUnit_Framework_TestCase{
-	public function testeSoma(){
-		$elevador = new Elevador(2);
-		$this->assertEquals('5', $elevador->somar(2, 3));
-	}
 	public function testeElevador(){
 		$passagerio = new Passageiro();
 		$passagerio->setCodigo(1);
@@ -20,10 +16,13 @@ class ElevadorTest extends PHPUnit_Framework_TestCase{
 		$this->assertEquals(17, $elevador->getAndar());
 		
 		$elevador->entrarElevador($passagerio);
+		$this->assertInstanceOf('Passageiro',$elevador->getPassageiro());
 		$elevador->Mover(11);
 		$this->assertEquals(11, $elevador->getAndar());
+		$this->assertInstanceOf('Passageiro',$elevador->getPassageiro());
 		$elevador->sairElevador();
-		
+		$this->assertNull($elevador->getPassageiro());
+		$this->assertFalse($elevador->existePassageiro());
 	}
 	
 }

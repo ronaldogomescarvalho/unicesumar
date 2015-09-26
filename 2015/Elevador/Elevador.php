@@ -13,16 +13,12 @@ class Elevador {
 		$this->andar=$andar;
 	}
 	
-	public function somar($numero1,$numero2){
-		return $numero1 + $numero2;
-	}
-	
 	public function entrarElevador(Passageiro $passageiro){
 		$this->passageiro = $passageiro;
 		echo "<br>Entrou no elevador";
 	}
 	public function sairElevador(){
-		unset($this->passageiro);
+		$this->passageiro = null;
 		echo "<br>Passageiro saiu do elevador";
 	}
 	
@@ -32,7 +28,16 @@ class Elevador {
 	public function getAndar(){
 		return $this->andar;
 	}
+	public function getPassageiro(){
+		return $this->passageiro;
+	}
 	
+	public function existePassageiro(){
+		if($this->passageiro==null)
+			return false;
+		
+		return true;
+	}
 
 	public function chamarElevador($posicaoPassageiro){
 		echo "<br>Passageiro chamou o elevador para o andar: ".$posicaoPassageiro;
