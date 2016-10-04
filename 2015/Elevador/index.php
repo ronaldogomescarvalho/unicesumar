@@ -1,4 +1,5 @@
 <?php
+//hacktoberfest 2016
 spl_autoload_register(
 function($className){
 	require $className.".php";
