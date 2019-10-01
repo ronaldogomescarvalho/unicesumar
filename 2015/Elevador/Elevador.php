@@ -1,9 +1,11 @@
 <?php
 spl_autoload_register(
-function($className){
-	require $className.".php";
-}
+	function($className)
+	{
+		require $className.".php";
+	}
 );
+
 class Elevador {
 	
 	private $andar = 0;
@@ -44,12 +46,12 @@ class Elevador {
 		if($posicaoPassageiro > $this->andar){
 			for ($i = $this->andar; $i <= $posicaoPassageiro; $i++){
 				$this->andar = $i;
-				echo "</br>O andar do elevador chamado é: ".$this->andar;
+				echo "</br>O andar do elevador chamado Ã©: ".$this->andar;
 			}	
 		}else{
 			for ($i = $this->andar; $i >= $posicaoPassageiro; $i--){
 				$this->andar = $i;
-				echo "</br>O andar do elevador chamado é: ".$this->andar;
+				echo "</br>O andar do elevador chamado Ã©: ".$this->andar;
 			}
 		}
 	}
@@ -59,12 +61,12 @@ class Elevador {
 		if($andarAlvo > $this->andar){
 			for ($i = $this->andar; $i <= $andarAlvo; $i++){
 				$this->andar = $i;
-				echo "</br>O andar do elevador é: ".$this->andar;
+				echo "</br>O andar do elevador Ã©: ".$this->andar;
 			}	
 		}else{
 			for ($i = $this->andar; $i >= $andarAlvo; $i--){
 				$this->andar = $i;
-				echo "</br>O andar do elevador é: ".$this->andar;
+				echo "</br>O andar do elevador Ã©: ".$this->andar;
 			}
 		}
 		
